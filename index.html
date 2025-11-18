@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eServices Support Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Public Support Form</p>
+      <h1>eServices Support Portal</h1>
+      <p class="lede">
+        Submit issues with territorial eServices so our support team can help you quickly. We aim to
+        respond within a business day.
+      </p>
+      <div class="hero__links">
+        <a class="privacy" href="https://www.eia.gov.nt.ca/sites/eia/files/2019-09-19_protection_of_privacy_policy.pdf" target="_blank" rel="noreferrer">Privacy Notice</a>
+        <span class="hero__badge">Secure &amp; Accessible</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="card__header">
+        <div>
+          <p class="eyebrow">Step 1</p>
+          <h2>Contact information</h2>
+          <p class="hint">We will use this to follow up about your request.</p>
+        </div>
+      </div>
+      <div class="card__body">
+        <form id="support-form">
+          <div class="grid">
+            <label class="field">
+              <span>Full name <span class="required">*</span></span>
+              <input id="fullName" name="fullName" type="text" autocomplete="name" required />
+            </label>
+            <label class="field">
+              <span>Email address <span class="required">*</span></span>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </label>
+            <label class="field">
+              <span>Confirm email address</span>
+              <input id="confirmEmail" name="confirmEmail" type="email" autocomplete="email" />
+            </label>
+            <label class="field">
+              <span>Phone number</span>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </label>
+          </div>
+
+          <div class="divider" role="presentation"></div>
+
+          <div class="card__header inline">
+            <div>
+              <p class="eyebrow">Step 2</p>
+              <h2>Service selection</h2>
+              <p class="hint">Choose the service you need help with.</p>
+            </div>
+          </div>
+
+          <label class="field">
+            <span>Service <span class="required">*</span></span>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option value="Fishing Licence">Fishing Licence</option>
+              <option value="Health Care Card (new)">Health Care Card (new)</option>
+              <option value="Health Care Card (renewal)">Health Care Card (renewal)</option>
+              <option value="Health Care Card (newborn)">Health Care Card (newborn)</option>
+              <option value="Vital Statistics Certificates">Vital Statistics Certificates</option>
+              <option value="Payment / Checkout / Cart">Payment / Checkout / Cart</option>
+              <option value="Account / Login / Registration">Account / Login / Registration</option>
+              <option value="Browser / Technical Issue">Browser / Technical Issue</option>
+              <option value="Outage / Service Unavailable">Outage / Service Unavailable</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+
+          <div id="otherServiceWrap" class="field hidden">
+            <div class="field__header">
+              <span>Other service details</span>
+              <span class="hint" id="otherCount">0 / 400</span>
+            </div>
+            <textarea id="otherService" name="otherService" maxlength="400" rows="3" placeholder="Describe the service you are having trouble with."></textarea>
+          </div>
+
+          <div id="paymentFields" class="fieldset hidden">
+            <div class="field__header">
+              <span>Payment or checkout details (optional)</span>
+              <span class="hint">Helps resolve payment-specific issues</span>
+            </div>
+            <div class="grid">
+              <label class="field">
+                <span>Order or confirmation number</span>
+                <input id="orderNumber" name="orderNumber" type="text" />
+              </label>
+              <label class="field">
+                <span>Last 4 digits of card</span>
+                <input id="cardLast4" name="cardLast4" type="text" maxlength="4" />
+              </label>
+              <label class="field">
+                <span>Payment provider</span>
+                <input id="paymentProvider" name="paymentProvider" type="text" placeholder="Visa, MasterCard, Interac" />
+              </label>
+            </div>
+          </div>
+
+          <div id="accountFields" class="fieldset hidden">
+            <div class="field__header">
+              <span>Account details (optional)</span>
+              <span class="hint">Provide only if safe to share</span>
+            </div>
+            <div class="grid">
+              <label class="field">
+                <span>Username or sign-in email</span>
+                <input id="username" name="username" type="text" />
+              </label>
+              <label class="field">
+                <span>Account number or client ID</span>
+                <input id="accountId" name="accountId" type="text" />
+              </label>
+            </div>
+          </div>
+
+          <div class="divider" role="presentation"></div>
+
+          <div class="card__header inline">
+            <div>
+              <p class="eyebrow">Step 3</p>
+              <h2>Issue details</h2>
+              <p class="hint">Tell us what happened.</p>
+            </div>
+          </div>
+
+          <label class="field">
+            <span>What were you trying to do?</span>
+            <input id="task" name="task" type="text" placeholder="E.g., renew my health care card" />
+          </label>
+
+          <label class="field">
+            <span>Please describe the issue <span class="required">*</span></span>
+            <textarea id="issue" name="issue" required rows="4" placeholder="Describe the problem in detail"></textarea>
+          </label>
+
+          <label class="field">
+            <span>Did you see an error message? Paste it here</span>
+            <textarea id="error" name="error" rows="3"></textarea>
+          </label>
+
+          <label class="field">
+            <span>Approximate date/time of the issue</span>
+            <input id="timestamp" name="timestamp" type="datetime-local" />
+          </label>
+
+          <div class="divider" role="presentation"></div>
+
+          <div class="card__header inline">
+            <div>
+              <p class="eyebrow">Step 4</p>
+              <h2>Technical context</h2>
+              <p class="hint">We capture your environment automatically. You can adjust if needed.</p>
+            </div>
+          </div>
+
+          <div class="grid">
+            <label class="field">
+              <span>Browser</span>
+              <input id="browser" name="browser" type="text" />
+            </label>
+            <label class="field">
+              <span>Operating system</span>
+              <input id="os" name="os" type="text" />
+            </label>
+            <label class="field">
+              <span>Device type</span>
+              <input id="device" name="device" type="text" />
+            </label>
+            <label class="field">
+              <span>Page URL</span>
+              <input id="pageUrl" name="pageUrl" type="url" />
+            </label>
+            <label class="field">
+              <span>Referrer URL</span>
+              <input id="referrer" name="referrer" type="url" />
+            </label>
+          </div>
+
+          <div class="notice" id="configNotice">
+            <strong>Routing configuration:</strong>
+            <span id="routingMode"></span>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="primary">Submit request</button>
+            <p class="note">By submitting, you consent to sharing these details for support purposes.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="statusPanel" class="card hidden">
+      <div class="card__header inline">
+        <div>
+          <p class="eyebrow">Submission status</p>
+          <h2>We have received your request</h2>
+          <p class="hint">A summary of what was sent is shown below.</p>
+        </div>
+      </div>
+      <div class="card__body">
+        <div class="status" id="statusMessage"></div>
+        <div class="payload">
+          <h3>Machine-readable payload (for TOPdesk or email)</h3>
+          <pre id="payloadPreview"></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Need urgent help? Call the Service Desk at 867-555-0199 during business hours.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
