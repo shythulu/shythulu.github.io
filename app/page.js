@@ -1,58 +1,30 @@
-const projects = [
-  {
-    name: 'DarkBerry',
-    href: 'https://github.com/shythulu/DarkBerry',
-    blurb: 'A four-flavour berry theme for editors, terminals and everything else. The colours on this page are its Mire flavour.',
-  },
-  {
-    name: 'PDFPundit',
-    href: 'https://github.com/shythulu/PDFPundit',
-    blurb: 'Fix PDFs, poop Markdown. Meow.',
-  },
-  {
-    name: 'Everything else',
-    href: 'https://github.com/shythulu',
-    blurb: 'Dotfiles, half-finished Rust, and whatever the lab needed that week.',
-  },
+const links = [
+  { name: 'DarkBerry', href: 'https://github.com/shythulu/DarkBerry' },
+  { name: 'Wett demo', href: 'https://shythulu.github.io/wett-demo/' },
+  { name: 'GitHub', href: 'https://github.com/shythulu' },
 ];
 
 export default function Home() {
   return (
     <>
-      <main className="container">
-        <section className="hero">
-          <h1>
-            slack<span className="mark">L</span>ab
-          </h1>
-          <p className="tagline">
-            A small self-hosted lab, and the things that crawl out of it.
-          </p>
-          <a className="button button-primary" href="https://github.com/shythulu">
-            GitHub
-          </a>{' '}
-          <a className="button" href="https://shythulu.github.io/DarkBerry/">
-            DarkBerry
-          </a>
-        </section>
+      <div className="bog" aria-hidden="true" />
 
-        <section className="row cards">
-          {projects.map((project) => (
-            <div className="one-third column" key={project.name}>
-              <div className="card">
-                <h3>
-                  <a href={project.href}>{project.name}</a>
-                </h3>
-                <p>{project.blurb}</p>
-              </div>
-            </div>
+      <main className="container">
+        <div className="monogram" aria-hidden="true">S</div>
+        <h1>slackLab</h1>
+
+        <nav aria-label="Projects">
+          {links.map((link, i) => (
+            <span className="nav-item" key={link.name}>
+              {i > 0 && <span className="dot" aria-hidden="true" />}
+              <a href={link.href}>{link.name}</a>
+            </span>
           ))}
-        </section>
+        </nav>
       </main>
 
       <footer className="site-footer">
-        <div className="container">
-          Built with Next.js and Skeleton. Coloured with DarkBerry.
-        </div>
+        Built with Next.js and Skeleton · Coloured with DarkBerry
       </footer>
     </>
   );
