@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 const links = [
-  { name: 'DarkBerry', href: 'https://github.com/shythulu/DarkBerry' },
-  { name: 'Wett demo', href: 'https://shythulu.github.io/wett-demo/' },
+  { name: 'DarkBerry', href: 'https://www.slacklab.ca/DarkBerry/' },
+  { name: 'Wett demo', href: 'https://wett.slacklab.ca/' },
   { name: 'GitHub', href: 'https://github.com/shythulu' },
 ];
 
