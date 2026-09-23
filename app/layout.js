@@ -1,13 +1,22 @@
-import { Cormorant_Garamond, Manufacturing_Consent } from 'next/font/google';
+import { Bodoni_Moda, Bodoni_Moda_SC, Manufacturing_Consent } from 'next/font/google';
 
 import './styles/normalize.css';
 import './styles/skeleton.css';
 import './styles/theme.css';
 
-const cormorant = Cormorant_Garamond({
+// Small caps for everything except paragraphs, which use Bodoni Moda.
+const bodoniSC = Bodoni_Moda_SC({
   subsets: ['latin'],
-  weight: ['500', '700'],
+  axes: ['opsz'],
   variable: '--font-body',
+  display: 'swap',
+});
+
+const bodoni = Bodoni_Moda({
+  subsets: ['latin'],
+  axes: ['opsz'],
+  style: ['normal', 'italic'],
+  variable: '--font-text',
   display: 'swap',
 });
 
@@ -29,7 +38,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${blackletter.variable}`}>
+    <html lang="en" className={`${bodoniSC.variable} ${bodoni.variable} ${blackletter.variable}`}>
       <body>{children}</body>
     </html>
   );

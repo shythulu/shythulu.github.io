@@ -22,10 +22,14 @@ body {
   color: var(--subtext1);
   display: flex;
   flex-direction: column;
-  font-family: var(--font-body), 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-body), 'Bodoni Moda SC', Georgia, serif;
   min-height: 100vh;
   min-height: 100svh;
   position: relative;
+}
+
+p {
+  font-family: var(--font-text), 'Bodoni Moda', Georgia, serif;
 }
 
 a {
