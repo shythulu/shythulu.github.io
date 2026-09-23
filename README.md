@@ -1,8 +1,10 @@
 # shythulu.github.io
 
-The slackLab landing page: Next.js (static export) styled with
-[Skeleton](http://getskeleton.com/) and the
-[DarkBerry](https://github.com/shythulu/DarkBerry) *Mire* palette.
+The slackLab landing page: Next.js (static export) on
+[Skeleton](http://getskeleton.com/), coloured with
+[DarkBerry](https://github.com/shythulu/DarkBerry). Type is Cormorant Garamond
+with a Manufacturing Consent monogram; the background is a Labrador tea bog in
+autumn.
 
 ```sh
 npm install
