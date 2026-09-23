@@ -1,30 +1,16 @@
 /*
- * DarkBerry — Mire flavour
+ * DarkBerry — Blackwater greys, one accent.
  * https://github.com/shythulu/DarkBerry
- * Values lifted verbatim from src/palette.json.
  */
 
 :root {
-  --crust: #1c1119;
-  --mantle: #23161f;
-  --base: #2a1e26;
-  --surface0: #32222c;
-  --surface1: #3e2936;
-  --surface2: #4f3143;
-  --overlay0: #7d6976;
-  --overlay1: #91828b;
-  --overlay2: #ad8da2;
-  --subtext0: #cbbcc5;
-  --subtext1: #ddd0d9;
-  --text: #efe3eb;
-
-  --blossom: #e7c5d8;
+  --crust: #12090f;
+  --overlay0: #6b5764;
+  --subtext0: #c6b7c0;
+  --subtext1: #d8cbd4;
+  --text: #ede1e9;
   --petal: #feafd4;
-  --berry: #fd7ca5;
-  --plum: #ddb0ec;
-  --juniper: #9ed0c4;
-  --jam: #ba4889;
-  --onjam: #ffffff;
+  --accent: #a77e8b;
 }
 
 html {
@@ -32,150 +18,120 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(70rem 40rem at 50% -10rem, var(--surface1), transparent 70%),
-    var(--base);
+  background: var(--crust);
   color: var(--subtext1);
   display: flex;
   flex-direction: column;
-  font-family: var(--font-raleway), 'Raleway', 'HelveticaNeue', sans-serif;
+  font-family: var(--font-body), 'Cormorant Garamond', Georgia, serif;
   min-height: 100vh;
-}
-
-main {
-  flex: 1 0 auto;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: var(--text);
-  letter-spacing: -0.02em;
+  min-height: 100svh;
+  position: relative;
 }
 
 a {
-  color: var(--berry);
+  color: var(--text);
   text-decoration: none;
 }
 
 a:hover {
   color: var(--petal);
-  text-decoration: underline;
 }
 
-hr {
-  border-top-color: var(--surface2);
+a:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
-/* Skeleton buttons, re-dyed */
-.button,
-button {
-  background: transparent;
-  border-color: var(--overlay0);
-  color: var(--subtext1);
-  letter-spacing: 0.08rem;
+/* The bog: greyscale, masked so it fades up into the page without a seam. */
+.bog {
+  background: url('/muskeg.jpg') center / cover no-repeat;
+  bottom: 0;
+  filter: grayscale(1) contrast(1.1) brightness(1.05);
+  height: 45%;
+  left: 0;
+  -webkit-mask-image: linear-gradient(transparent, #000 60%);
+  mask-image: linear-gradient(transparent, #000 60%);
+  min-height: 280px;
+  opacity: 0.6;
+  position: absolute;
+  right: 0;
 }
 
-.button:hover,
-button:hover,
-.button:focus,
-button:focus {
-  border-color: var(--berry);
+.bog::after {
+  background: linear-gradient(transparent 40%, rgba(18, 9, 15, 0.6));
+  content: '';
+  inset: 0;
+  position: absolute;
+}
+
+/* main.container: beats Skeleton's `.container { padding: 0 20px }`. */
+main.container {
+  align-items: center;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  padding-bottom: 96px;
+  padding-top: clamp(56px, 11.5vh, 104px);
+  position: relative;
+}
+
+.monogram {
+  color: var(--accent);
+  font-family: var(--font-blackletter), serif;
+  font-size: clamp(150px, 24vh, 220px);
+  line-height: 0.85;
+  user-select: none;
+}
+
+h1 {
   color: var(--text);
-  outline: 0;
+  font-family: inherit;
+  font-size: clamp(26px, 7vw, 34px);
+  font-weight: 700;
+  letter-spacing: 0.41em;
+  line-height: 1.2;
+  margin: 34px 0 0;
+  padding-left: 0.41em;
+  text-transform: uppercase;
 }
 
-.button.button-primary,
-button.button-primary {
-  background: var(--jam);
-  border-color: var(--jam);
-  color: var(--onjam);
-}
-
-.button.button-primary:hover,
-button.button-primary:hover,
-.button.button-primary:focus,
-button.button-primary:focus {
-  background: var(--berry);
-  border-color: var(--berry);
-  color: var(--crust);
-}
-
-code {
-  background: var(--surface0);
-  border-color: var(--surface2);
-  color: var(--plum);
-}
-
-/* Page furniture */
-.hero {
-  padding: 18rem 0 6rem;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 6.4rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.hero h1 .mark {
-  color: var(--berry);
-}
-
-.hero .tagline {
-  color: var(--overlay2);
-  font-size: 2rem;
-  margin: 0 auto 3rem;
-  max-width: 44rem;
-}
-
-.card {
-  background: var(--surface0);
-  flex: 1;
-  border: 1px solid var(--surface2);
-  border-radius: 6px;
-  padding: 2.4rem;
-}
-
-.card h3 {
-  font-size: 2rem;
-  margin-bottom: 0.8rem;
-}
-
-.card p {
-  color: var(--subtext0);
-  font-size: 1.5rem;
-  margin-bottom: 0;
-}
-
-/* Skeleton's grid floats; flex makes the cards share a height. */
-.cards {
+nav {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 6rem;
+  font-size: 18px;
+  font-weight: 700;
+  justify-content: center;
+  margin-top: 44px;
+  row-gap: 4px;
 }
 
-.cards .column {
-  display: flex;
+.nav-item {
+  align-items: center;
+  display: inline-flex;
+}
+
+nav a {
+  align-items: center;
+  display: inline-flex;
+  min-height: 44px;
+  padding: 0 14px;
+}
+
+.dot {
+  background: var(--overlay0);
+  border-radius: 50%;
+  height: 4px;
+  margin: 0 0;
+  width: 4px;
 }
 
 .site-footer {
-  border-top: 1px solid var(--surface1);
-  color: var(--overlay1);
-  font-size: 1.3rem;
-  padding: 3rem 0 6rem;
+  color: var(--subtext0);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  padding: 0 16px 32px;
+  position: relative;
   text-align: center;
-}
-
-@media (max-width: 550px) {
-  .hero {
-    padding: 10rem 0 4rem;
-  }
-
-  .hero h1 {
-    font-size: 4.6rem;
-  }
-
-  .card {
-    margin-bottom: 2rem;
-  }
 }
