@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const links = [
   { name: 'DarkBerry', href: 'https://github.com/shythulu/DarkBerry' },
   { name: 'Wett demo', href: 'https://shythulu.github.io/wett-demo/' },
@@ -9,7 +11,7 @@ export default function Home() {
     <>
       <div className="bog" aria-hidden="true" />
 
-      <main className="container">
+      <main className="container home">
         <div className="monogram" aria-hidden="true">S</div>
         <h1>slackLab</h1>
 
@@ -24,6 +26,9 @@ export default function Home() {
       </main>
 
       <footer className="site-footer">
+        <Link className="why-link" href="/why/">
+          Why slackLab?
+        </Link>
         Built with Next.js and Skeleton · Coloured with DarkBerry
       </footer>
     </>

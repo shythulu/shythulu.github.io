@@ -84,7 +84,7 @@ main.container {
   user-select: none;
 }
 
-h1 {
+.home h1 {
   color: var(--text);
   font-family: inherit;
   font-size: clamp(26px, 7vw, 34px);
@@ -134,4 +134,93 @@ nav a {
   padding: 0 16px 32px;
   position: relative;
   text-align: center;
+}
+
+.why-link {
+  color: var(--subtext1);
+  display: block;
+  font-size: 17px;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  margin: 0 auto 10px;
+  padding: 10px 0;
+  width: fit-content;
+}
+
+.why-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* The "Why slackLab?" page */
+main.story {
+  align-items: stretch;
+  padding-top: clamp(40px, 8vh, 72px);
+}
+
+.story-home {
+  align-self: center;
+  color: var(--accent);
+  font-family: var(--font-blackletter), serif;
+  font-size: 72px;
+  line-height: 1;
+  padding: 4px 12px;
+}
+
+.story-home:hover {
+  color: var(--petal);
+}
+
+.story article {
+  margin: 28px auto 0;
+  max-width: 34em;
+  width: 100%;
+}
+
+.story h1 {
+  color: var(--text);
+  font-family: inherit;
+  font-size: clamp(36px, 7vw, 48px);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.15;
+  margin: 0 0 32px;
+  text-align: center;
+}
+
+.story p {
+  color: var(--subtext1);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.7;
+  margin: 0 0 24px;
+}
+
+.story figure {
+  margin: 44px auto 12px;
+  max-width: 420px;
+}
+
+.story figure img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.story figcaption {
+  color: var(--subtext0);
+  font-size: 17px;
+  font-style: italic;
+  margin-top: 14px;
+  text-align: center;
+}
+
+.story-back {
+  color: var(--text);
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 48px auto 0;
+  padding: 10px 0;
+  width: fit-content;
 }
