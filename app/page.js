@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 const links = [
   { name: 'DarkBerry', href: 'https://www.slacklab.ca/DarkBerry/' },
+  { name: 'PDFPundit', href: 'https://www.slacklab.ca/PDFPundit/' },
   { name: 'Wett demo', href: 'https://wett.slacklab.ca/' },
   { name: 'GitHub', href: 'https://github.com/shythulu' },
 ];
